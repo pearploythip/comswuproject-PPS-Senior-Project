@@ -1,0 +1,26 @@
+import sklearn
+import pandas as pd 
+df = pd.read_csv('C:/Users/User/Desktop/Data_time02.csv')
+df.head()
+import numpy as np
+m= df.cov(min_periods=None)
+m
+eigenValues, eigenVectors = np.linalg.eig(m)
+eigenValues
+idx = eigenValues.argsort()[::-1]   
+print(idx)
+eigenValues = eigenValues[idx]
+eigenVectors = eigenVectors[:,idx]
+from sklearn.decomposition import PCA 
+from sklearn import decomposition
+pca = PCA(n_components = 69)
+table = pca.fit_transform(df)
+table
+principalDf = pd.DataFrame(data = table
+             , columns = ['principal component 1' ,'principal component 2' ,'principal component 3','principal component 4' ,'principal component 5' ,'principal component 6' ,'principal component 7' ,'principal component 8' ,'principal component 9' ,'principal component 10' ,'principal component 11' ,'principal component 12' ,'principal component 13' ,'principal component 14' ,'principal component 15' ,
+'principal component 16' ,'principal component 17' ,'principal component 18' ,'principal component 19' ,'principal component 20' ,'principal component 21' ,'principal component 22' ,'principal component 23' ,'principal component 24' ,'principal component 25' ,'principal component 26' ,'principal component 27' ,'principal component 28' ,'principal component 29' ,'principal component 30' ,
+'principal component 31' ,'principal component 32' ,'principal component 33' ,'principal component 34' ,'principal component 35' ,'principal component 36' ,'principal component 37' ,'principal component 38' ,'principal component 39' ,'principal component 40' ,'principal component 41' ,'principal component 42' ,'principal component 43' ,'principal component 44' ,'principal component 45' ,
+'principal component 46' ,'principal component 47' ,'principal component 48' ,'principal component 49' ,'principal component 50' ,'principal component 51' ,'principal component 52' ,'principal component 53' ,'principal component 54' ,'principal component 55' ,'principal component 56' ,'principal component 57' ,'principal component 58' ,'principal component 59' ,'principal component 60' ,
+'principal component 61' ,'principal component 62' ,'principal component 63' ,'principal component 64' ,'principal component 65' ,'principal component 66' ,'principal component 67' ,'principal component 68' ,'principal component 69'
+])
+principalDf

@@ -1,0 +1,25 @@
+import pandas as pd
+from mlxtend.preprocessing import OnehotTransactions
+df = pd.read_excel("C:/Users/BigFather/Desktop/pps/mypro57ex.xlsx",sheetname=0)
+df.head()
+from mlxtend.frequent_patterns import apriori
+from mlxtend.frequent_patterns import association_rules
+df['DeviceID'] = df['DeviceID'].astype('str')
+basket = (df
+          .groupby(['DeviceID', 'Location'])['Associated']
+          .sum().unstack().reset_index().fillna(0)
+          .set_index('DeviceID'))
+ basket.head()
+ def encode_units(x):
+    if x <= 0:
+        return 0
+    if x >= 1:
+        return 1
+basket_sets = basket.applymap(encode_units)
+frequent_itemsets = apriori(basket_sets, min_support=0.012, use_colnames=True)
+rules = association_rules(frequent_itemsets, metric="lift", min_threshold=0.5)
+rules.head()
+rules
+rules[ (rules['lift'] >= 1.0) &
+       (rules['confidence'] >= 0.65) ]
+      
