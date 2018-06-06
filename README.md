@@ -1,7 +1,9 @@
 
 
 # PPS
-pps_project
+pps_project 2560
+
+Customer Behavior Analysis Based on Indoor Location Based Service Data
 
 Business and service providers are interested in customer behaviors to understand more about customers and improve services. Smartphone is commonly used for Location Based Services (LBS) for indoor area. The objective of this paper is to analyze customer behavior by using customer locations at different times that was calculated from Wi-Fi signal strength.
 
