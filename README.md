@@ -1,6 +1,8 @@
 
+
 # PPS
 pps_project
+
 Business and service providers are interested in customer behaviors to understand more about customers and improve services. Smartphone is commonly used for Location Based Services (LBS) for indoor area. The objective of this paper is to analyze customer behavior by using customer locations at different times that was calculated from Wi-Fi signal strength.
 
 This project investigates 3 data mining algorithms, which is Association Rules or Market Basket Analysis, Clustering, and Classification to analyze customer behavior based on 500,000 data records of 35,865 customers that visited 81 locations in a department store.
